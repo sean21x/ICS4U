@@ -38,11 +38,7 @@ namespace CaoSeanCalculator
             textBox.Text += "3";
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Your text: " + textBox.Text);
-        }
-
+        
         private void button12_Click(object sender, EventArgs e)
         {
 
@@ -114,6 +110,11 @@ namespace CaoSeanCalculator
         }
 
         private void button14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void equalsign_Click(object sender, EventArgs e)
         {
 
         }

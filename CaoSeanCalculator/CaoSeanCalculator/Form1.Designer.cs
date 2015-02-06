@@ -31,7 +31,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.equals = new System.Windows.Forms.Button();
+            this.equalsign = new System.Windows.Forms.Button();
             this.textBox = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -48,6 +48,7 @@
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
+            this.buttonArrayTest = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -80,15 +81,15 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // equals
+            // equalsign
             // 
-            this.equals.Location = new System.Drawing.Point(104, 194);
-            this.equals.Name = "equals";
-            this.equals.Size = new System.Drawing.Size(132, 26);
-            this.equals.TabIndex = 3;
-            this.equals.Text = "=";
-            this.equals.UseVisualStyleBackColor = true;
-            this.equals.Click += new System.EventHandler(this.button4_Click);
+            this.equalsign.Location = new System.Drawing.Point(104, 194);
+            this.equalsign.Name = "equalsign";
+            this.equalsign.Size = new System.Drawing.Size(132, 26);
+            this.equalsign.TabIndex = 3;
+            this.equalsign.Text = "=";
+            this.equalsign.UseVisualStyleBackColor = true;
+            this.equalsign.Click += new System.EventHandler(this.equalsign_Click);
             // 
             // textBox
             // 
@@ -250,11 +251,21 @@
             this.button19.UseVisualStyleBackColor = true;
             this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
+            // buttonArrayTest
+            // 
+            this.buttonArrayTest.Location = new System.Drawing.Point(280, 93);
+            this.buttonArrayTest.Name = "buttonArrayTest";
+            this.buttonArrayTest.Size = new System.Drawing.Size(75, 23);
+            this.buttonArrayTest.TabIndex = 20;
+            this.buttonArrayTest.Text = "button4";
+            this.buttonArrayTest.UseVisualStyleBackColor = true;
+            // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(241, 227);
+            this.ClientSize = new System.Drawing.Size(462, 372);
+            this.Controls.Add(this.buttonArrayTest);
             this.Controls.Add(this.button19);
             this.Controls.Add(this.button18);
             this.Controls.Add(this.button17);
@@ -271,7 +282,7 @@
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.textBox);
-            this.Controls.Add(this.equals);
+            this.Controls.Add(this.equalsign);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -287,7 +298,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button equals;
+        private System.Windows.Forms.Button equalsign;
         private System.Windows.Forms.TextBox textBox;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
@@ -304,6 +315,7 @@
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Button buttonArrayTest;
     }
 }
 
