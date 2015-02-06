@@ -16,7 +16,7 @@ namespace CaoSeanCalculator
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Calculator());
         }
     }
 }
