@@ -77,6 +77,7 @@
             // 
             // textBox
             // 
+            this.textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
             this.textBox.Location = new System.Drawing.Point(12, 12);
             this.textBox.Multiline = true;
             this.textBox.Name = "textBox";

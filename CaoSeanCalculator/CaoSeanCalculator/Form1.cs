@@ -24,7 +24,8 @@ namespace CaoSeanCalculator
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            if (textBox.Text == "CBABC")
+                MessageBox.Show("That's the secret code!");
         }
 
         private void button2_Click(object sender, EventArgs e)
