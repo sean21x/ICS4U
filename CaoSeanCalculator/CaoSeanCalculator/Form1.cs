@@ -19,7 +19,27 @@ namespace CaoSeanCalculator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Hello World! this is from school");
+            textBox.Text += "A";
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox.Text += "B";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox.Text += "C";
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Your text: " + textBox.Text);
         }
     }
 }
