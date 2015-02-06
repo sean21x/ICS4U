@@ -19,7 +19,7 @@ namespace CaoSeanCalculator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Hello World! again");
+            MessageBox.Show("Hello World! this is from school");
         }
     }
 }
