@@ -42,5 +42,10 @@ namespace CaoSeanCalculator
         {
             MessageBox.Show("Your text: " + textBox.Text);
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
