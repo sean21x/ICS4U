@@ -210,8 +210,6 @@ namespace CaoSeanCalculator
                 else
                     textBox.Text += "7";
             }
-            if ((plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && memFlag == true)
-                textBox.Text += "7";
 
             if (memFlag == true)
             {
@@ -222,7 +220,8 @@ namespace CaoSeanCalculator
                 //multiplyFlag = false;
                 //divideFlag = false;
             }
-           
+           if (plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
+                textBox.Text += "7";
         }
 
         //repeat steps from 1 for 8
