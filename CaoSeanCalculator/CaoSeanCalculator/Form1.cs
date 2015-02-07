@@ -15,12 +15,14 @@ namespace CaoSeanCalculator
         //Declaring private variables here
         private int memory = 0;
         private int temp1stnumber = 0;
-
+        private bool mflagged = false;
+     
         public Calculator()
         {
             InitializeComponent();
+            textBox.Text = "0";
         }
-
+        
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -36,51 +38,143 @@ namespace CaoSeanCalculator
 
         private void one_Click(object sender, EventArgs e)
         {
-            textBox.Text += "1";
+            if (mflagged == false)
+            {
+                if (Convert.ToInt32(textBox.Text) == 0)
+                    textBox.Text = "1";
+                else
+                    textBox.Text += "1";
+            }
+            else
+            {
+                textBox.Text = "1";
+            }
         }
 
         private void two_Click(object sender, EventArgs e)
         {
-            textBox.Text += "2";
+            if (mflagged == false)
+            {
+                if (Convert.ToInt32(textBox.Text) == 0)
+                    textBox.Text = "2";
+                else
+                    textBox.Text += "2";
+            }
+            else
+            {
+                textBox.Text = "2";
+            }
         }
 
         private void three_Click(object sender, EventArgs e)
         {
-            textBox.Text += "3";
+            if (mflagged == false)
+            {
+                if (Convert.ToInt32(textBox.Text) == 0)
+                    textBox.Text = "3";
+                else
+                    textBox.Text += "3";
+            }
+            else
+            {
+                textBox.Text = "3";
+            }
         }
 
         private void four_Click(object sender, EventArgs e)
         {
-            textBox.Text += "4";
+            if (mflagged == false)
+            {
+                if (Convert.ToInt32(textBox.Text) == 0)
+                    textBox.Text = "4";
+                else
+                    textBox.Text += "4";
+            }
+            else
+            {
+                textBox.Text = "4";
+            }
         }
 
         private void five_Click(object sender, EventArgs e)
         {
-            textBox.Text += "5";
+            if (mflagged == false)
+            {
+                if (Convert.ToInt32(textBox.Text) == 0)
+                    textBox.Text = "5";
+                else
+                    textBox.Text += "5";
+            }
+            else
+            {
+                textBox.Text = "5";
+            }
         }
 
         private void six_Click(object sender, EventArgs e)
         {
-            textBox.Text += "6";
+            if (mflagged == false)
+            {
+                if (Convert.ToInt32(textBox.Text) == 0)
+                    textBox.Text = "6";
+                else
+                    textBox.Text += "6";
+            }
+            else
+            {
+                textBox.Text = "6";
+            }
         }
 
         private void seven_Click(object sender, EventArgs e)
         {
-            textBox.Text += "7";
+            if (mflagged == false)
+            {
+                if (Convert.ToInt32(textBox.Text) == 0)
+                    textBox.Text = "7";
+                else
+                    textBox.Text += "7";
+            }
+            else
+            {
+                textBox.Text = "7";
+            }
         }
 
         private void eight_Click(object sender, EventArgs e)
         {
-            textBox.Text += "8";
+            if (mflagged == false)
+            {
+                if (Convert.ToInt32(textBox.Text) == 0)
+                    textBox.Text = "8";
+                else
+                    textBox.Text += "8";
+            }
+            else
+            {
+                textBox.Text = "8";
+            }
         }
 
         private void nine_Click(object sender, EventArgs e)
         {
-            textBox.Text += "9";
+            if (mflagged == false)
+            {
+                if (Convert.ToInt32(textBox.Text) == 0)
+                    textBox.Text = "9";
+                else
+                textBox.Text += "9";
+            }
+            else
+            {
+                textBox.Text = "9";
+            }
         }
 
         private void zero_Click(object sender, EventArgs e)
         {
+            if (mflagged == false)
+            if (Convert.ToInt32(textBox.Text) != 0)
             textBox.Text += "0";
         }
 
@@ -106,28 +200,32 @@ namespace CaoSeanCalculator
 
         private void memAdd_Click(object sender, EventArgs e)
         {
+            mflagged = true;
             memory += Convert.ToInt32(textBox.Text);
         }
 
         private void memSubtract_Click(object sender, EventArgs e)
         {
+            mflagged = true;
             memory -= Convert.ToInt32(textBox.Text);
         }
 
         private void memRecall_Click(object sender, EventArgs e)
         {
+            mflagged = false;
             textBox.Text = Convert.ToString(memory);
+            Console.Write(textBox.Text);
         }
 
         private void memClear_Click(object sender, EventArgs e)
         {
             memory = 0;
-            textBox.Text = "";
+            mflagged = true;
         }
 
         private void clear_Click(object sender, EventArgs e)
         {
-            textBox.Text = "";
+            textBox.Text = "0";
         }
     }
 }

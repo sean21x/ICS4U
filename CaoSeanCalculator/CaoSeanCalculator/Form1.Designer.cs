@@ -98,9 +98,9 @@
             this.textBox.Multiline = true;
             this.textBox.Name = "textBox";
             this.textBox.ReadOnly = true;
-            this.textBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textBox.Size = new System.Drawing.Size(224, 62);
             this.textBox.TabIndex = 4;
+            this.textBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // four
