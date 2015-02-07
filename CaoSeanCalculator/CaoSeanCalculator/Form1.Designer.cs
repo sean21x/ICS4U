@@ -49,6 +49,7 @@
             this.divide = new System.Windows.Forms.Button();
             this.zero = new System.Windows.Forms.Button();
             this.clear = new System.Windows.Forms.Button();
+            this.memIndicator = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // one
@@ -101,7 +102,7 @@
             this.textBox.Size = new System.Drawing.Size(224, 62);
             this.textBox.TabIndex = 4;
             this.textBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // four
             // 
@@ -185,7 +186,7 @@
             // 
             // memRecall
             // 
-            this.memRecall.Location = new System.Drawing.Point(104, 80);
+            this.memRecall.Location = new System.Drawing.Point(149, 80);
             this.memRecall.Name = "memRecall";
             this.memRecall.Size = new System.Drawing.Size(40, 23);
             this.memRecall.TabIndex = 13;
@@ -195,7 +196,7 @@
             // 
             // memClear
             // 
-            this.memClear.Location = new System.Drawing.Point(150, 80);
+            this.memClear.Location = new System.Drawing.Point(195, 80);
             this.memClear.Name = "memClear";
             this.memClear.Size = new System.Drawing.Size(40, 23);
             this.memClear.TabIndex = 14;
@@ -255,7 +256,7 @@
             // 
             // clear
             // 
-            this.clear.Location = new System.Drawing.Point(150, 109);
+            this.clear.Location = new System.Drawing.Point(195, 109);
             this.clear.Name = "clear";
             this.clear.Size = new System.Drawing.Size(40, 23);
             this.clear.TabIndex = 21;
@@ -263,11 +264,23 @@
             this.clear.UseVisualStyleBackColor = true;
             this.clear.Click += new System.EventHandler(this.clear_Click);
             // 
+            // memIndicator
+            // 
+            this.memIndicator.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.memIndicator.Location = new System.Drawing.Point(20, 20);
+            this.memIndicator.Name = "memIndicator";
+            this.memIndicator.ReadOnly = true;
+            this.memIndicator.Size = new System.Drawing.Size(32, 26);
+            this.memIndicator.TabIndex = 22;
+            this.memIndicator.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.memIndicator.TextChanged += new System.EventHandler(this.memIndicator_TextChanged);
+            // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(247, 229);
+            this.Controls.Add(this.memIndicator);
             this.Controls.Add(this.clear);
             this.Controls.Add(this.zero);
             this.Controls.Add(this.divide);
@@ -319,6 +332,7 @@
         private System.Windows.Forms.Button divide;
         private System.Windows.Forms.Button zero;
         private System.Windows.Forms.Button clear;
+        private System.Windows.Forms.TextBox memIndicator;
     }
 }
 

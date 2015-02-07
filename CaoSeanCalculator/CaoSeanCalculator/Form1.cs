@@ -15,16 +15,20 @@ namespace CaoSeanCalculator
         //Declaring private variables here
         private int memory = 0;
         private int temp1stnumber = 0;
-        private bool mflagged = false;
+        private bool memFlag = false;
+        private bool plusFlag = false;
+        private bool minusFlag = false;
+        private bool multiplyFlag = false;
+        private bool divideFlag = false;
      
         public Calculator()
         {
             InitializeComponent();
-            textBox.Text = "0";
+            textBox.Text = "0"; //start the calculator with a 0
         }
         
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void textBox_TextChanged(object sender, EventArgs e)
         {
             /*if (textBox.Text == "12321")
                 MessageBox.Show("That's the secret code!");
@@ -33,199 +37,311 @@ namespace CaoSeanCalculator
 
         private void equalsign_Click(object sender, EventArgs e)
         {
-
+            if(plusFlag == true)
+            {
+                textBox.Text = Convert.ToString(temp1stnumber + Convert.ToInt32(textBox.Text));
+                temp1stnumber = 0;
+                plusFlag = false;
+            }
+            if (minusFlag == true)
+            {
+                textBox.Text = Convert.ToString(temp1stnumber - Convert.ToInt32(textBox.Text));
+                temp1stnumber = 0;
+                minusFlag = false;
+            }
+            if (multiplyFlag == true)
+            {
+                textBox.Text = Convert.ToString(temp1stnumber * Convert.ToInt32(textBox.Text));
+                temp1stnumber = 0;
+                multiplyFlag = false;
+            }
+            if (divideFlag == true)
+            {
+                textBox.Text = Convert.ToString(temp1stnumber / Convert.ToInt32(textBox.Text));
+                temp1stnumber = 0;
+                divideFlag = false;
+            }
         }
 
         private void one_Click(object sender, EventArgs e)
         {
-            if (mflagged == false)
+            if (memFlag == false && plusFlag == false && minusFlag == false && multiplyFlag == false && divideFlag == false)
             {
                 if (Convert.ToInt32(textBox.Text) == 0)
                     textBox.Text = "1";
                 else
                     textBox.Text += "1";
             }
-            else
+            if (memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
             {
                 textBox.Text = "1";
+                memFlag = false;
+                //plusFlag = false;
+                //minusFlag = false;
+                //multiplyFlag = false;
+                //divideFlag = false;
             }
         }
 
+        //repeat steps from 1 for 2
         private void two_Click(object sender, EventArgs e)
         {
-            if (mflagged == false)
+            if (memFlag == false && plusFlag == false && minusFlag == false && multiplyFlag == false && divideFlag == false)
             {
                 if (Convert.ToInt32(textBox.Text) == 0)
                     textBox.Text = "2";
                 else
                     textBox.Text += "2";
             }
-            else
+            if (memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
             {
                 textBox.Text = "2";
+                memFlag = false;
+                //plusFlag = false;
+                //minusFlag = false;
+                //multiplyFlag = false;
+                //divideFlag = false;
             }
         }
 
+        //repeat steps from 1 for 3
         private void three_Click(object sender, EventArgs e)
         {
-            if (mflagged == false)
+            if (memFlag == false && plusFlag == false && minusFlag == false && multiplyFlag == false && divideFlag == false)
             {
                 if (Convert.ToInt32(textBox.Text) == 0)
                     textBox.Text = "3";
                 else
                     textBox.Text += "3";
             }
-            else
+            if (memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
             {
                 textBox.Text = "3";
+                memFlag = false;
+                //plusFlag = false;
+                //minusFlag = false;
+                //multiplyFlag = false;
+                //divideFlag = false;
             }
         }
 
+        //repeat steps from 1 for 4
         private void four_Click(object sender, EventArgs e)
         {
-            if (mflagged == false)
+            if (memFlag == false && plusFlag == false && minusFlag == false && multiplyFlag == false && divideFlag == false)
             {
                 if (Convert.ToInt32(textBox.Text) == 0)
                     textBox.Text = "4";
                 else
                     textBox.Text += "4";
             }
-            else
+            if (memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
             {
                 textBox.Text = "4";
+                memFlag = false;
+                //plusFlag = false;
+                //minusFlag = false;
+                //multiplyFlag = false;
+                //divideFlag = false;
             }
         }
 
+        //repeat steps from 1 for 5
         private void five_Click(object sender, EventArgs e)
         {
-            if (mflagged == false)
+            if (memFlag == false && plusFlag == false && minusFlag == false && multiplyFlag == false && divideFlag == false)
             {
                 if (Convert.ToInt32(textBox.Text) == 0)
                     textBox.Text = "5";
                 else
                     textBox.Text += "5";
             }
-            else
+            if (memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
             {
                 textBox.Text = "5";
+                memFlag = false;
+                //plusFlag = false;
+                //minusFlag = false;
+                //multiplyFlag = false;
+                //divideFlag = false;
             }
         }
 
+        //repeat steps from 1 for 6
         private void six_Click(object sender, EventArgs e)
         {
-            if (mflagged == false)
+            if (memFlag == false && plusFlag == false && minusFlag == false && multiplyFlag == false && divideFlag == false)
             {
                 if (Convert.ToInt32(textBox.Text) == 0)
                     textBox.Text = "6";
                 else
                     textBox.Text += "6";
             }
-            else
+            if (memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
             {
                 textBox.Text = "6";
+                memFlag = false;
+                //plusFlag = false;
+                //minusFlag = false;
+                //multiplyFlag = false;
+                //divideFlag = false;
             }
         }
 
+        //repeat steps from 1 for 7
         private void seven_Click(object sender, EventArgs e)
         {
-            if (mflagged == false)
+            if (memFlag == false && plusFlag == false && minusFlag == false && multiplyFlag == false && divideFlag == false)
             {
                 if (Convert.ToInt32(textBox.Text) == 0)
                     textBox.Text = "7";
                 else
                     textBox.Text += "7";
             }
-            else
+            if (memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
             {
                 textBox.Text = "7";
+                memFlag = false;
+                //plusFlag = false;
+                //minusFlag = false;
+                //multiplyFlag = false;
+                //divideFlag = false;
             }
         }
 
+        //repeat steps from 1 for 8
         private void eight_Click(object sender, EventArgs e)
         {
-            if (mflagged == false)
+            if (memFlag == false && plusFlag == false && minusFlag == false && multiplyFlag == false && divideFlag == false)
             {
                 if (Convert.ToInt32(textBox.Text) == 0)
                     textBox.Text = "8";
                 else
                     textBox.Text += "8";
             }
-            else
+            if (memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
             {
                 textBox.Text = "8";
+                memFlag = false;
+                //plusFlag = false;
+                //minusFlag = false;
+                //multiplyFlag = false;
+                //divideFlag = false;
             }
         }
 
+        //repeat steps from 1 for 9
         private void nine_Click(object sender, EventArgs e)
         {
-            if (mflagged == false)
+            if (memFlag == false && plusFlag == false && minusFlag == false && multiplyFlag == false && divideFlag == false)
             {
                 if (Convert.ToInt32(textBox.Text) == 0)
                     textBox.Text = "9";
                 else
                 textBox.Text += "9";
             }
-            else
+            if (memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
             {
                 textBox.Text = "9";
+                memFlag = false;
+                //plusFlag = false;
+                //minusFlag = false;
+                //multiplyFlag = false;
+                //divideFlag = false;
             }
         }
 
         private void zero_Click(object sender, EventArgs e)
         {
-            if (mflagged == false)
-            if (Convert.ToInt32(textBox.Text) != 0)
-            textBox.Text += "0";
+            if (memFlag == false && plusFlag == false && minusFlag == false && multiplyFlag == false && divideFlag == false)//checks if memory or any other operator button has been clicked
+            {
+                if (Convert.ToInt32(textBox.Text) != 0)//checks if the number in the textbox is 0
+                    textBox.Text += "0";//add 0 if it is not(we don't want 00 or 000 showing up
+                else
+                
+                    textBox.Text = "0";
+            }
+            if (memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
+            {
+                textBox.Text = "0";
+                memFlag = false;
+                //plusFlag = false;
+                //minusFlag = false;
+                //multiplyFlag = false;
+                //divideFlag = false;
+            }
         }
 
         private void plus_Click(object sender, EventArgs e)
         {
-
+            plusFlag = true;
+            temp1stnumber = Convert.ToInt32(textBox.Text);
         }
 
         private void minus_Click(object sender, EventArgs e)
         {
-
+            minusFlag = true;
+            temp1stnumber = Convert.ToInt32(textBox.Text);
         }
 
         private void multiply_Click(object sender, EventArgs e)
         {
-
+            multiplyFlag = true;
+            temp1stnumber = Convert.ToInt32(textBox.Text);
         }
 
         private void divide_Click(object sender, EventArgs e)
         {
-
+            divideFlag = true;
+            temp1stnumber = Convert.ToInt32(textBox.Text);
         }
 
         private void memAdd_Click(object sender, EventArgs e)
         {
-            mflagged = true;
+            memFlag = true;
             memory += Convert.ToInt32(textBox.Text);
+            if (memory != 0)
+                memIndicator.Text = "M";
+            else
+                memIndicator.Text = "";
         }
 
         private void memSubtract_Click(object sender, EventArgs e)
         {
-            mflagged = true;
+            memFlag = true;
             memory -= Convert.ToInt32(textBox.Text);
+            if (memory != 0)
+                memIndicator.Text = "M";
+            else
+                memIndicator.Text = "";
         }
 
         private void memRecall_Click(object sender, EventArgs e)
         {
-            mflagged = false;
+            memFlag = true;
             textBox.Text = Convert.ToString(memory);
-            Console.Write(textBox.Text);
+            //Console.Write(textBox.Text);
         }
 
         private void memClear_Click(object sender, EventArgs e)
         {
             memory = 0;
-            mflagged = true;
+            memFlag = true;
+            if (memory != 0)
+                memIndicator.Text = "M";
+            else
+                memIndicator.Text = "";
         }
 
         private void clear_Click(object sender, EventArgs e)
         {
             textBox.Text = "0";
         }
+
+        private void memIndicator_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
