@@ -14,6 +14,7 @@ namespace CaoSeanCalculator
     {
         //Declaring private variables here
         private int memory = 0;
+        private int temp1stnumber = 0;
 
         public Calculator()
         {
@@ -23,8 +24,9 @@ namespace CaoSeanCalculator
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (textBox.Text == "12321")
+            /*if (textBox.Text == "12321")
                 MessageBox.Show("That's the secret code!");
+             */
         }
 
         private void equalsign_Click(object sender, EventArgs e)
