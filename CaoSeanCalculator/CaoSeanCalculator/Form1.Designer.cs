@@ -48,7 +48,7 @@
             this.multiply = new System.Windows.Forms.Button();
             this.divide = new System.Windows.Forms.Button();
             this.zero = new System.Windows.Forms.Button();
-            this.buttonArrayTest = new System.Windows.Forms.Button();
+            this.clear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // one
@@ -97,6 +97,8 @@
             this.textBox.Location = new System.Drawing.Point(12, 12);
             this.textBox.Multiline = true;
             this.textBox.Name = "textBox";
+            this.textBox.ReadOnly = true;
+            this.textBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textBox.Size = new System.Drawing.Size(224, 62);
             this.textBox.TabIndex = 4;
             this.textBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -251,21 +253,22 @@
             this.zero.UseVisualStyleBackColor = true;
             this.zero.Click += new System.EventHandler(this.zero_Click);
             // 
-            // buttonArrayTest
+            // clear
             // 
-            this.buttonArrayTest.Location = new System.Drawing.Point(331, 12);
-            this.buttonArrayTest.Name = "buttonArrayTest";
-            this.buttonArrayTest.Size = new System.Drawing.Size(75, 23);
-            this.buttonArrayTest.TabIndex = 20;
-            this.buttonArrayTest.Text = "button4";
-            this.buttonArrayTest.UseVisualStyleBackColor = true;
+            this.clear.Location = new System.Drawing.Point(150, 109);
+            this.clear.Name = "clear";
+            this.clear.Size = new System.Drawing.Size(40, 23);
+            this.clear.TabIndex = 21;
+            this.clear.Text = "C";
+            this.clear.UseVisualStyleBackColor = true;
+            this.clear.Click += new System.EventHandler(this.clear_Click);
             // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(462, 372);
-            this.Controls.Add(this.buttonArrayTest);
+            this.ClientSize = new System.Drawing.Size(247, 229);
+            this.Controls.Add(this.clear);
             this.Controls.Add(this.zero);
             this.Controls.Add(this.divide);
             this.Controls.Add(this.multiply);
@@ -315,7 +318,7 @@
         private System.Windows.Forms.Button multiply;
         private System.Windows.Forms.Button divide;
         private System.Windows.Forms.Button zero;
-        private System.Windows.Forms.Button buttonArrayTest;
+        private System.Windows.Forms.Button clear;
     }
 }
 
