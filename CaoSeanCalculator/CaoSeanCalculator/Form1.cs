@@ -72,7 +72,7 @@ namespace CaoSeanCalculator
                 else
                     textBox.Text += "1";
             }
-            if (memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
+            if (memFlag == true)
             {
                 textBox.Text = "1";
                 memFlag = false;
@@ -81,6 +81,8 @@ namespace CaoSeanCalculator
                 //multiplyFlag = false;
                 //divideFlag = false;
             }
+            if (plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
+                textBox.Text += "1";
         }
 
         //repeat steps from 1 for 2
@@ -93,7 +95,7 @@ namespace CaoSeanCalculator
                 else
                     textBox.Text += "2";
             }
-            if (memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
+            if (memFlag == true)
             {
                 textBox.Text = "2";
                 memFlag = false;
@@ -102,6 +104,8 @@ namespace CaoSeanCalculator
                 //multiplyFlag = false;
                 //divideFlag = false;
             }
+            if (plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
+                textBox.Text += "2";
         }
 
         //repeat steps from 1 for 3
@@ -114,7 +118,7 @@ namespace CaoSeanCalculator
                 else
                     textBox.Text += "3";
             }
-            if (memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
+            if (memFlag == true)
             {
                 textBox.Text = "3";
                 memFlag = false;
@@ -123,6 +127,8 @@ namespace CaoSeanCalculator
                 //multiplyFlag = false;
                 //divideFlag = false;
             }
+            if (plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
+                textBox.Text += "3";
         }
 
         //repeat steps from 1 for 4
@@ -135,7 +141,7 @@ namespace CaoSeanCalculator
                 else
                     textBox.Text += "4";
             }
-            if (memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
+            if (memFlag == true)
             {
                 textBox.Text = "4";
                 memFlag = false;
@@ -144,6 +150,8 @@ namespace CaoSeanCalculator
                 //multiplyFlag = false;
                 //divideFlag = false;
             }
+            if (plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
+                textBox.Text += "4";
         }
 
         //repeat steps from 1 for 5
@@ -156,7 +164,7 @@ namespace CaoSeanCalculator
                 else
                     textBox.Text += "5";
             }
-            if (memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
+            if (memFlag == true)
             {
                 textBox.Text = "5";
                 memFlag = false;
@@ -165,6 +173,8 @@ namespace CaoSeanCalculator
                 //multiplyFlag = false;
                 //divideFlag = false;
             }
+            if (plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
+                textBox.Text += "5";
         }
 
         //repeat steps from 1 for 6
@@ -177,7 +187,7 @@ namespace CaoSeanCalculator
                 else
                     textBox.Text += "6";
             }
-            if (memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
+            if (memFlag == true)
             {
                 textBox.Text = "6";
                 memFlag = false;
@@ -186,6 +196,8 @@ namespace CaoSeanCalculator
                 //multiplyFlag = false;
                 //divideFlag = false;
             }
+            if (plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
+                textBox.Text += "6";
         }
 
         //repeat steps from 1 for 7
@@ -198,7 +210,10 @@ namespace CaoSeanCalculator
                 else
                     textBox.Text += "7";
             }
-            if (memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
+            if ((plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && memFlag == true)
+                textBox.Text += "7";
+
+            if (memFlag == true)
             {
                 textBox.Text = "7";
                 memFlag = false;
@@ -207,6 +222,7 @@ namespace CaoSeanCalculator
                 //multiplyFlag = false;
                 //divideFlag = false;
             }
+           
         }
 
         //repeat steps from 1 for 8
@@ -219,7 +235,7 @@ namespace CaoSeanCalculator
                 else
                     textBox.Text += "8";
             }
-            if (memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
+            if (memFlag == true)
             {
                 textBox.Text = "8";
                 memFlag = false;
@@ -228,6 +244,8 @@ namespace CaoSeanCalculator
                 //multiplyFlag = false;
                 //divideFlag = false;
             }
+            if (plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
+                textBox.Text += "8";
         }
 
         //repeat steps from 1 for 9
@@ -240,7 +258,7 @@ namespace CaoSeanCalculator
                 else
                 textBox.Text += "9";
             }
-            if (memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
+            if (memFlag == true)
             {
                 textBox.Text = "9";
                 memFlag = false;
@@ -249,6 +267,8 @@ namespace CaoSeanCalculator
                 //multiplyFlag = false;
                 //divideFlag = false;
             }
+            if (plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
+                textBox.Text += "9";
         }
 
         private void zero_Click(object sender, EventArgs e)

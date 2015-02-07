@@ -270,7 +270,7 @@
             this.memIndicator.Location = new System.Drawing.Point(20, 20);
             this.memIndicator.Name = "memIndicator";
             this.memIndicator.ReadOnly = true;
-            this.memIndicator.Size = new System.Drawing.Size(32, 26);
+            this.memIndicator.Size = new System.Drawing.Size(23, 26);
             this.memIndicator.TabIndex = 22;
             this.memIndicator.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.memIndicator.TextChanged += new System.EventHandler(this.memIndicator_TextChanged);
