@@ -20,6 +20,7 @@ namespace CaoSeanCalculator
         private bool minusFlag = false;
         private bool multiplyFlag = false;
         private bool divideFlag = false;
+        private bool isNotFirstDigit = false;
      
         public Calculator()
         {
@@ -42,24 +43,28 @@ namespace CaoSeanCalculator
                 textBox.Text = Convert.ToString(temp1stnumber + Convert.ToInt32(textBox.Text));
                 temp1stnumber = 0;
                 plusFlag = false;
+                isNotFirstDigit = false;
             }
             if (minusFlag == true)
             {
                 textBox.Text = Convert.ToString(temp1stnumber - Convert.ToInt32(textBox.Text));
                 temp1stnumber = 0;
                 minusFlag = false;
+                isNotFirstDigit = false;
             }
             if (multiplyFlag == true)
             {
                 textBox.Text = Convert.ToString(temp1stnumber * Convert.ToInt32(textBox.Text));
                 temp1stnumber = 0;
                 multiplyFlag = false;
+                isNotFirstDigit = false;
             }
             if (divideFlag == true)
             {
                 textBox.Text = Convert.ToString(temp1stnumber / Convert.ToInt32(textBox.Text));
                 temp1stnumber = 0;
                 divideFlag = false;
+                isNotFirstDigit = false;
             }
         }
 
@@ -72,16 +77,17 @@ namespace CaoSeanCalculator
                 else
                     textBox.Text += "1";
             }
-            if (memFlag == true)
+            if ((memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == false)
             {
                 textBox.Text = "1";
                 memFlag = false;
+                isNotFirstDigit = true;
                 //plusFlag = false;
                 //minusFlag = false;
                 //multiplyFlag = false;
                 //divideFlag = false;
             }
-            if (plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
+            else if ((plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == true)
                 textBox.Text += "1";
         }
 
@@ -95,16 +101,17 @@ namespace CaoSeanCalculator
                 else
                     textBox.Text += "2";
             }
-            if (memFlag == true)
+            if ((memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == false)
             {
                 textBox.Text = "2";
                 memFlag = false;
+                isNotFirstDigit = true;
                 //plusFlag = false;
                 //minusFlag = false;
                 //multiplyFlag = false;
                 //divideFlag = false;
             }
-            if (plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
+            else if ((plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == true)
                 textBox.Text += "2";
         }
 
@@ -118,16 +125,17 @@ namespace CaoSeanCalculator
                 else
                     textBox.Text += "3";
             }
-            if (memFlag == true)
+            if ((memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == false)
             {
                 textBox.Text = "3";
                 memFlag = false;
+                isNotFirstDigit = true;
                 //plusFlag = false;
                 //minusFlag = false;
                 //multiplyFlag = false;
                 //divideFlag = false;
             }
-            if (plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
+            else if ((plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == true)
                 textBox.Text += "3";
         }
 
@@ -164,16 +172,17 @@ namespace CaoSeanCalculator
                 else
                     textBox.Text += "5";
             }
-            if (memFlag == true)
+            if ((memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == false)
             {
                 textBox.Text = "5";
                 memFlag = false;
+                isNotFirstDigit = true;
                 //plusFlag = false;
                 //minusFlag = false;
                 //multiplyFlag = false;
                 //divideFlag = false;
             }
-            if (plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
+            else if ((plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == true)
                 textBox.Text += "5";
         }
 
@@ -187,16 +196,17 @@ namespace CaoSeanCalculator
                 else
                     textBox.Text += "6";
             }
-            if (memFlag == true)
+            if ((memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == false)
             {
                 textBox.Text = "6";
                 memFlag = false;
+                isNotFirstDigit = true;
                 //plusFlag = false;
                 //minusFlag = false;
                 //multiplyFlag = false;
                 //divideFlag = false;
             }
-            if (plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
+            else if ((plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == true)
                 textBox.Text += "6";
         }
 
@@ -211,16 +221,17 @@ namespace CaoSeanCalculator
                     textBox.Text += "7";
             }
 
-            if (memFlag == true)
+            if ((memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == false)
             {
                 textBox.Text = "7";
                 memFlag = false;
+                isNotFirstDigit = true;
                 //plusFlag = false;
                 //minusFlag = false;
                 //multiplyFlag = false;
                 //divideFlag = false;
             }
-           if (plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
+            else if ((plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == true)
                 textBox.Text += "7";
         }
 
@@ -234,16 +245,17 @@ namespace CaoSeanCalculator
                 else
                     textBox.Text += "8";
             }
-            if (memFlag == true)
+            if ((memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == false)
             {
                 textBox.Text = "8";
                 memFlag = false;
+                isNotFirstDigit = true;
                 //plusFlag = false;
                 //minusFlag = false;
                 //multiplyFlag = false;
                 //divideFlag = false;
             }
-            if (plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
+            else if ((plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == true)
                 textBox.Text += "8";
         }
 
@@ -257,16 +269,17 @@ namespace CaoSeanCalculator
                 else
                 textBox.Text += "9";
             }
-            if (memFlag == true)
+            if ((memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == false)
             {
                 textBox.Text = "9";
                 memFlag = false;
+                isNotFirstDigit = true;
                 //plusFlag = false;
                 //minusFlag = false;
                 //multiplyFlag = false;
                 //divideFlag = false;
             }
-            if (plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
+            else if ((plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == true)
                 textBox.Text += "9";
         }
 
