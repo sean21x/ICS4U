@@ -266,12 +266,12 @@
             // 
             // memIndicator
             // 
-            this.memIndicator.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.memIndicator.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.memIndicator.Location = new System.Drawing.Point(12, 12);
             this.memIndicator.Multiline = true;
             this.memIndicator.Name = "memIndicator";
             this.memIndicator.ReadOnly = true;
-            this.memIndicator.Size = new System.Drawing.Size(23, 20);
+            this.memIndicator.Size = new System.Drawing.Size(18, 21);
             this.memIndicator.TabIndex = 22;
             this.memIndicator.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.memIndicator.TextChanged += new System.EventHandler(this.memIndicator_TextChanged);

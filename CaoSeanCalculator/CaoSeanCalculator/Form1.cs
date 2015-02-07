@@ -21,6 +21,7 @@ namespace CaoSeanCalculator
         private bool multiplyFlag = false;
         private bool divideFlag = false;
         private bool isNotFirstDigit = false;
+        private bool equalSignPressed = false;
      
         public Calculator()
         {
@@ -44,51 +45,69 @@ namespace CaoSeanCalculator
                 temp1stnumber = 0;
                 plusFlag = false;
                 isNotFirstDigit = false;
+                equalSignPressed = true;
             }
-            if (minusFlag == true)
+            else if (minusFlag == true)
             {
                 textBox.Text = Convert.ToString(temp1stnumber - Convert.ToInt32(textBox.Text));
                 temp1stnumber = 0;
                 minusFlag = false;
                 isNotFirstDigit = false;
+                equalSignPressed = true;
             }
-            if (multiplyFlag == true)
+            else if (multiplyFlag == true)
             {
                 textBox.Text = Convert.ToString(temp1stnumber * Convert.ToInt32(textBox.Text));
                 temp1stnumber = 0;
                 multiplyFlag = false;
                 isNotFirstDigit = false;
+                equalSignPressed = true;
             }
-            if (divideFlag == true)
+            else if (divideFlag == true)
             {
                 textBox.Text = Convert.ToString(temp1stnumber / Convert.ToInt32(textBox.Text));
                 temp1stnumber = 0;
                 divideFlag = false;
                 isNotFirstDigit = false;
+                equalSignPressed = true;
+            }
+            else
+            {
+                temp1stnumber = 0;
+                memFlag = false;
+                plusFlag = false;
+                minusFlag = false;
+                multiplyFlag = false;
+                divideFlag = false;
+                isNotFirstDigit = false;
+                equalSignPressed = true;
             }
         }
 
         private void one_Click(object sender, EventArgs e)
         {
-            if (memFlag == false && plusFlag == false && minusFlag == false && multiplyFlag == false && divideFlag == false)
-            {
-                if (Convert.ToInt32(textBox.Text) == 0)
-                    textBox.Text = "1";
-                else
-                    textBox.Text += "1";
-            }
-            if ((memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == false)
+            if ((memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true || equalSignPressed == true) && isNotFirstDigit == false)
             {
                 textBox.Text = "1";
                 memFlag = false;
                 isNotFirstDigit = true;
+                
                 //plusFlag = false;
                 //minusFlag = false;
                 //multiplyFlag = false;
                 //divideFlag = false;
             }
-            else if ((plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == true)
+            else if (memFlag == false && plusFlag == false && minusFlag == false && multiplyFlag == false && divideFlag == false && equalSignPressed == true)
+            {
+                if (Convert.ToInt32(textBox.Text) == 0)
+                    textBox.Text = "1";
+                else
+                    textBox.Text += "1";              
+            }
+            
+            else if ((plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true || equalSignPressed == false) && isNotFirstDigit == true)       
                 textBox.Text += "1";
+            equalSignPressed = false;
         }
 
         //repeat steps from 1 for 2
@@ -368,6 +387,9 @@ namespace CaoSeanCalculator
         private void clear_Click(object sender, EventArgs e)
         {
             textBox.Text = "0";
+            temp1stnumber = 0;
+            plusFlag = false;
+            isNotFirstDigit = false;
         }
 
         private void memIndicator_TextChanged(object sender, EventArgs e)
