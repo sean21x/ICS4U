@@ -1,7 +1,7 @@
 ﻿/* This application is a calculator that calculates simple math
  * There is a memory feature available as a well as a Memory indicator(top left of display)
  * There are no decimals...
- * Using the numericUpDown, you can change the color of the text in the display(in terms of red)
+ * Using the numericUpDown, you can change background color for the display
  * I learned that it's really difficult to make a program without bugs
  * There are many cases of calculation that I have appeared to miss
  */
@@ -34,6 +34,7 @@ namespace CaoSeanCalculator
         {
             InitializeComponent();
             textBox.Text = "0"; //start the calculator with a 0
+            textBox.BackColor = Color.White;
         }
 
         private void equalsign_Click(object sender, EventArgs e)
@@ -223,6 +224,44 @@ namespace CaoSeanCalculator
             divideFlag = false;
             isNotFirstDigit = false;
             errorIndicator.Text = "";
+        }
+
+        private void ColorChanger_ValueChanged(object sender, EventArgs e)
+        {
+            if (ColorChanger.Value == 0)
+                textBox.BackColor = Color.White;
+            if (ColorChanger.Value == 1)
+                textBox.BackColor = Color.AliceBlue;
+            if (ColorChanger.Value == 2)
+                textBox.BackColor = Color.Aqua;
+            if (ColorChanger.Value == 3)
+                textBox.BackColor = Color.Azure;
+            if (ColorChanger.Value == 4)
+                textBox.BackColor = Color.Beige;
+            if (ColorChanger.Value == 5)
+                textBox.BackColor = Color.CadetBlue;
+            if (ColorChanger.Value == 6)
+                textBox.BackColor = Color.Cyan;
+            if (ColorChanger.Value == 7)
+                textBox.BackColor = Color.Crimson;
+            if (ColorChanger.Value == 8)
+                textBox.BackColor = Color.Coral;
+            if (ColorChanger.Value == 9)
+                textBox.BackColor = Color.DarkGoldenrod;
+            if (ColorChanger.Value == 10)
+                textBox.BackColor = Color.DeepSkyBlue;
+            if (ColorChanger.Value == 11)
+                textBox.BackColor = Color.Green;
+            if (ColorChanger.Value == 12)
+                textBox.BackColor = Color.LemonChiffon;
+            if (ColorChanger.Value == 13)
+                textBox.BackColor = Color.Maroon;
+            if (ColorChanger.Value == 14)
+                textBox.BackColor = Color.LimeGreen;
+            if (ColorChanger.Value == 15)
+                textBox.BackColor = Color.Pink;
+            if (ColorChanger.Value == 16)
+                textBox.BackColor = Color.Violet;
         }
 
     }

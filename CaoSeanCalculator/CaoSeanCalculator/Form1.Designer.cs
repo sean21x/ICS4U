@@ -281,16 +281,17 @@
             // ColorChanger
             // 
             this.ColorChanger.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.ColorChanger.Location = new System.Drawing.Point(202, 6);
+            this.ColorChanger.Location = new System.Drawing.Point(195, 6);
             this.ColorChanger.Maximum = new decimal(new int[] {
-            255,
+            16,
             0,
             0,
             0});
             this.ColorChanger.Name = "ColorChanger";
             this.ColorChanger.ReadOnly = true;
-            this.ColorChanger.Size = new System.Drawing.Size(34, 20);
+            this.ColorChanger.Size = new System.Drawing.Size(41, 20);
             this.ColorChanger.TabIndex = 23;
+            this.ColorChanger.ValueChanged += new System.EventHandler(this.ColorChanger_ValueChanged);
             // 
             // Title
             // 
