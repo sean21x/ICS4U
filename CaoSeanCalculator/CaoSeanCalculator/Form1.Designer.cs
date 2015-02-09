@@ -50,11 +50,15 @@
             this.zero = new System.Windows.Forms.Button();
             this.clear = new System.Windows.Forms.Button();
             this.memIndicator = new System.Windows.Forms.TextBox();
+            this.ColorChanger = new System.Windows.Forms.NumericUpDown();
+            this.Title = new System.Windows.Forms.Label();
+            this.errorIndicator = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.ColorChanger)).BeginInit();
             this.SuspendLayout();
             // 
             // one
             // 
-            this.one.Location = new System.Drawing.Point(12, 109);
+            this.one.Location = new System.Drawing.Point(12, 108);
             this.one.Name = "one";
             this.one.Size = new System.Drawing.Size(40, 23);
             this.one.TabIndex = 0;
@@ -64,7 +68,7 @@
             // 
             // two
             // 
-            this.two.Location = new System.Drawing.Point(58, 109);
+            this.two.Location = new System.Drawing.Point(58, 108);
             this.two.Name = "two";
             this.two.Size = new System.Drawing.Size(40, 23);
             this.two.TabIndex = 1;
@@ -74,7 +78,7 @@
             // 
             // three
             // 
-            this.three.Location = new System.Drawing.Point(104, 109);
+            this.three.Location = new System.Drawing.Point(104, 108);
             this.three.Name = "three";
             this.three.Size = new System.Drawing.Size(40, 23);
             this.three.TabIndex = 2;
@@ -84,7 +88,7 @@
             // 
             // equalsign
             // 
-            this.equalsign.Location = new System.Drawing.Point(104, 194);
+            this.equalsign.Location = new System.Drawing.Point(104, 193);
             this.equalsign.Name = "equalsign";
             this.equalsign.Size = new System.Drawing.Size(132, 26);
             this.equalsign.TabIndex = 3;
@@ -95,18 +99,17 @@
             // textBox
             // 
             this.textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox.Location = new System.Drawing.Point(12, 12);
+            this.textBox.Location = new System.Drawing.Point(12, 30);
             this.textBox.Multiline = true;
             this.textBox.Name = "textBox";
             this.textBox.ReadOnly = true;
-            this.textBox.Size = new System.Drawing.Size(224, 62);
+            this.textBox.Size = new System.Drawing.Size(224, 43);
             this.textBox.TabIndex = 4;
             this.textBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // four
             // 
-            this.four.Location = new System.Drawing.Point(12, 138);
+            this.four.Location = new System.Drawing.Point(12, 137);
             this.four.Name = "four";
             this.four.Size = new System.Drawing.Size(40, 23);
             this.four.TabIndex = 5;
@@ -116,7 +119,7 @@
             // 
             // five
             // 
-            this.five.Location = new System.Drawing.Point(58, 138);
+            this.five.Location = new System.Drawing.Point(58, 137);
             this.five.Name = "five";
             this.five.Size = new System.Drawing.Size(40, 23);
             this.five.TabIndex = 6;
@@ -126,7 +129,7 @@
             // 
             // six
             // 
-            this.six.Location = new System.Drawing.Point(104, 138);
+            this.six.Location = new System.Drawing.Point(104, 137);
             this.six.Name = "six";
             this.six.Size = new System.Drawing.Size(40, 23);
             this.six.TabIndex = 7;
@@ -136,7 +139,7 @@
             // 
             // seven
             // 
-            this.seven.Location = new System.Drawing.Point(12, 167);
+            this.seven.Location = new System.Drawing.Point(12, 166);
             this.seven.Name = "seven";
             this.seven.Size = new System.Drawing.Size(40, 23);
             this.seven.TabIndex = 8;
@@ -146,7 +149,7 @@
             // 
             // eight
             // 
-            this.eight.Location = new System.Drawing.Point(58, 167);
+            this.eight.Location = new System.Drawing.Point(58, 166);
             this.eight.Name = "eight";
             this.eight.Size = new System.Drawing.Size(40, 23);
             this.eight.TabIndex = 9;
@@ -156,7 +159,7 @@
             // 
             // nine
             // 
-            this.nine.Location = new System.Drawing.Point(104, 167);
+            this.nine.Location = new System.Drawing.Point(104, 166);
             this.nine.Name = "nine";
             this.nine.Size = new System.Drawing.Size(40, 23);
             this.nine.TabIndex = 10;
@@ -166,7 +169,7 @@
             // 
             // memAdd
             // 
-            this.memAdd.Location = new System.Drawing.Point(12, 80);
+            this.memAdd.Location = new System.Drawing.Point(12, 79);
             this.memAdd.Name = "memAdd";
             this.memAdd.Size = new System.Drawing.Size(40, 23);
             this.memAdd.TabIndex = 11;
@@ -176,7 +179,7 @@
             // 
             // memSubtract
             // 
-            this.memSubtract.Location = new System.Drawing.Point(58, 80);
+            this.memSubtract.Location = new System.Drawing.Point(58, 79);
             this.memSubtract.Name = "memSubtract";
             this.memSubtract.Size = new System.Drawing.Size(40, 23);
             this.memSubtract.TabIndex = 12;
@@ -186,7 +189,7 @@
             // 
             // memRecall
             // 
-            this.memRecall.Location = new System.Drawing.Point(149, 80);
+            this.memRecall.Location = new System.Drawing.Point(149, 79);
             this.memRecall.Name = "memRecall";
             this.memRecall.Size = new System.Drawing.Size(40, 23);
             this.memRecall.TabIndex = 13;
@@ -196,7 +199,7 @@
             // 
             // memClear
             // 
-            this.memClear.Location = new System.Drawing.Point(195, 80);
+            this.memClear.Location = new System.Drawing.Point(195, 79);
             this.memClear.Name = "memClear";
             this.memClear.Size = new System.Drawing.Size(40, 23);
             this.memClear.TabIndex = 14;
@@ -206,7 +209,7 @@
             // 
             // plus
             // 
-            this.plus.Location = new System.Drawing.Point(150, 138);
+            this.plus.Location = new System.Drawing.Point(150, 137);
             this.plus.Name = "plus";
             this.plus.Size = new System.Drawing.Size(40, 23);
             this.plus.TabIndex = 15;
@@ -216,7 +219,7 @@
             // 
             // minus
             // 
-            this.minus.Location = new System.Drawing.Point(196, 138);
+            this.minus.Location = new System.Drawing.Point(196, 137);
             this.minus.Name = "minus";
             this.minus.Size = new System.Drawing.Size(40, 23);
             this.minus.TabIndex = 16;
@@ -226,7 +229,7 @@
             // 
             // multiply
             // 
-            this.multiply.Location = new System.Drawing.Point(150, 167);
+            this.multiply.Location = new System.Drawing.Point(150, 166);
             this.multiply.Name = "multiply";
             this.multiply.Size = new System.Drawing.Size(40, 23);
             this.multiply.TabIndex = 17;
@@ -236,7 +239,7 @@
             // 
             // divide
             // 
-            this.divide.Location = new System.Drawing.Point(196, 167);
+            this.divide.Location = new System.Drawing.Point(196, 166);
             this.divide.Name = "divide";
             this.divide.Size = new System.Drawing.Size(40, 23);
             this.divide.TabIndex = 18;
@@ -246,7 +249,7 @@
             // 
             // zero
             // 
-            this.zero.Location = new System.Drawing.Point(58, 196);
+            this.zero.Location = new System.Drawing.Point(58, 195);
             this.zero.Name = "zero";
             this.zero.Size = new System.Drawing.Size(40, 23);
             this.zero.TabIndex = 19;
@@ -256,7 +259,7 @@
             // 
             // clear
             // 
-            this.clear.Location = new System.Drawing.Point(195, 109);
+            this.clear.Location = new System.Drawing.Point(195, 108);
             this.clear.Name = "clear";
             this.clear.Size = new System.Drawing.Size(40, 23);
             this.clear.TabIndex = 21;
@@ -267,20 +270,56 @@
             // memIndicator
             // 
             this.memIndicator.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.memIndicator.Location = new System.Drawing.Point(12, 12);
+            this.memIndicator.Location = new System.Drawing.Point(12, 30);
             this.memIndicator.Multiline = true;
             this.memIndicator.Name = "memIndicator";
             this.memIndicator.ReadOnly = true;
             this.memIndicator.Size = new System.Drawing.Size(18, 21);
             this.memIndicator.TabIndex = 22;
             this.memIndicator.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.memIndicator.TextChanged += new System.EventHandler(this.memIndicator_TextChanged);
+            // 
+            // ColorChanger
+            // 
+            this.ColorChanger.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.ColorChanger.Location = new System.Drawing.Point(202, 6);
+            this.ColorChanger.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.ColorChanger.Name = "ColorChanger";
+            this.ColorChanger.ReadOnly = true;
+            this.ColorChanger.Size = new System.Drawing.Size(34, 20);
+            this.ColorChanger.TabIndex = 23;
+            // 
+            // Title
+            // 
+            this.Title.Location = new System.Drawing.Point(12, 1);
+            this.Title.Name = "Title";
+            this.Title.Size = new System.Drawing.Size(183, 26);
+            this.Title.TabIndex = 24;
+            this.Title.Text = "Sean\'s Calculator";
+            this.Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // errorIndicator
+            // 
+            this.errorIndicator.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.errorIndicator.Location = new System.Drawing.Point(12, 52);
+            this.errorIndicator.Multiline = true;
+            this.errorIndicator.Name = "errorIndicator";
+            this.errorIndicator.ReadOnly = true;
+            this.errorIndicator.Size = new System.Drawing.Size(18, 21);
+            this.errorIndicator.TabIndex = 25;
+            this.errorIndicator.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(247, 229);
+            this.ClientSize = new System.Drawing.Size(241, 223);
+            this.Controls.Add(this.errorIndicator);
+            this.Controls.Add(this.Title);
+            this.Controls.Add(this.ColorChanger);
             this.Controls.Add(this.memIndicator);
             this.Controls.Add(this.clear);
             this.Controls.Add(this.zero);
@@ -305,6 +344,7 @@
             this.Controls.Add(this.one);
             this.Name = "Calculator";
             this.Text = "Calculator";
+            ((System.ComponentModel.ISupportInitialize)(this.ColorChanger)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -334,6 +374,9 @@
         private System.Windows.Forms.Button zero;
         private System.Windows.Forms.Button clear;
         private System.Windows.Forms.TextBox memIndicator;
+        private System.Windows.Forms.NumericUpDown ColorChanger;
+        private System.Windows.Forms.Label Title;
+        private System.Windows.Forms.TextBox errorIndicator;
     }
 }
 

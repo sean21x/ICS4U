@@ -1,5 +1,9 @@
-﻿/*
- * 
+﻿/* This application is a calculator that calculates simple math
+ * There is a memory feature available as a well as a Memory indicator(top left of display)
+ * There are no decimals...
+ * Using the numericUpDown, you can change the color of the text in the display(in terms of red)
+ * I learned that it's really difficult to make a program without bugs
+ * There are many cases of calculation that I have appeared to miss
  */
 
 using System;
@@ -25,69 +29,31 @@ namespace CaoSeanCalculator
         private bool multiplyFlag = false;
         private bool divideFlag = false;
         private bool isNotFirstDigit = false;
-        private bool equalSignPressed = false;
      
         public Calculator()
         {
             InitializeComponent();
             textBox.Text = "0"; //start the calculator with a 0
         }
-        
-
-        private void textBox_TextChanged(object sender, EventArgs e)
-        {
-            /*if (textBox.Text == "12321")
-                MessageBox.Show("That's the secret code!");
-             */
-        }
 
         private void equalsign_Click(object sender, EventArgs e)
         {
             if(plusFlag == true)
-            {
-                textBox.Text = Convert.ToString(temp1stnumber + Convert.ToInt32(textBox.Text));
-                temp1stnumber = 0;
-                plusFlag = false;
-                isNotFirstDigit = false;
-                equalSignPressed = true;
-            }
+                textBox.Text = Convert.ToString(temp1stnumber + Convert.ToInt32(textBox.Text));          
             else if (minusFlag == true)
-            {
                 textBox.Text = Convert.ToString(temp1stnumber - Convert.ToInt32(textBox.Text));
-                temp1stnumber = 0;
-                minusFlag = false;
-                isNotFirstDigit = false;
-                equalSignPressed = true;
-            }
             else if (multiplyFlag == true)
-            {
                 textBox.Text = Convert.ToString(temp1stnumber * Convert.ToInt32(textBox.Text));
-                temp1stnumber = 0;
-                multiplyFlag = false;
-                isNotFirstDigit = false;
-                equalSignPressed = true;
-            }
             else if (divideFlag == true)
             {
-                //int n = Convert.ToInt32(textBox.Text);
-
-                //if (n == 0)
-                //{
-                //    textBox.Text = "infinite";
-                //}
-                //else
-                //{
-
-                textBox.Text = Convert.ToString(temp1stnumber / Convert.ToInt32(textBox.Text));
-                //}
-
-                temp1stnumber = 0;
-                divideFlag = false;
-                isNotFirstDigit = false;
-                equalSignPressed = true;
+                if (textBox.Text != "0")
+                    textBox.Text = Convert.ToString(temp1stnumber / Convert.ToInt32(textBox.Text));
+                else
+                {
+                    errorIndicator.Text = "E";
+                    textBox.Text = "0";
+                }      
             }
-            else
-            {
                 temp1stnumber = 0;
                 memFlag = false;
                 plusFlag = false;
@@ -95,8 +61,7 @@ namespace CaoSeanCalculator
                 multiplyFlag = false;
                 divideFlag = false;
                 isNotFirstDigit = false;
-                equalSignPressed = true;
-            }
+            
         }
 
         private void digitClicked(int value)
@@ -113,10 +78,6 @@ namespace CaoSeanCalculator
                 textBox.Text = Convert.ToString(value);
                 memFlag = false;
                 isNotFirstDigit = true;
-                //plusFlag = false;
-                //minusFlag = false;
-                //multiplyFlag = false;
-                //divideFlag = false;
             }
             else if ((plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == true)
                 textBox.Text += Convert.ToString(value);
@@ -125,235 +86,54 @@ namespace CaoSeanCalculator
         private void one_Click(object sender, EventArgs e)
         {
             digitClicked(1);
-            //if ((memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true || equalSignPressed == true) && isNotFirstDigit == false)
-            //{
-            //    textBox.Text = "1";
-            //    memFlag = false;
-            //    isNotFirstDigit = true;
-                
-            //    //plusFlag = false;
-            //    //minusFlag = false;
-            //    //multiplyFlag = false;
-            //    //divideFlag = false;
-            //}
-            //else if (memFlag == false && plusFlag == false && minusFlag == false && multiplyFlag == false && divideFlag == false && equalSignPressed == true)
-            //{
-            //    if (Convert.ToInt32(textBox.Text) == 0)
-            //        textBox.Text = "1";
-            //    else
-            //        textBox.Text += "1";              
-            //}
-            
-            //else if ((plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true || equalSignPressed == false) && isNotFirstDigit == true)       
-            //    textBox.Text += "1";
-            //equalSignPressed = false;
         }
 
-        //repeat steps from 1 for 2
         private void two_Click(object sender, EventArgs e)
         {
             digitClicked(2);
-            //if (memFlag == false && plusFlag == false && minusFlag == false && multiplyFlag == false && divideFlag == false)
-            //{
-            //    if (Convert.ToInt32(textBox.Text) == 0)
-            //        textBox.Text = "2";
-            //    else
-            //        textBox.Text += "2";
-            //}
-            //if ((memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == false)
-            //{
-            //    textBox.Text = "2";
-            //    memFlag = false;
-            //    isNotFirstDigit = true;
-            //    //plusFlag = false;
-            //    //minusFlag = false;
-            //    //multiplyFlag = false;
-            //    //divideFlag = false;
-            //}
-            //else if ((plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == true)
-            //    textBox.Text += "2";
         }
 
-        //repeat steps from 1 for 3
         private void three_Click(object sender, EventArgs e)
         {
             digitClicked(3);
-            //if (memFlag == false && plusFlag == false && minusFlag == false && multiplyFlag == false && divideFlag == false)
-            //{
-            //    if (Convert.ToInt32(textBox.Text) == 0)
-            //        textBox.Text = "3";
-            //    else
-            //        textBox.Text += "3";
-            //}
-            //if ((memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == false)
-            //{
-            //    textBox.Text = "3";
-            //    memFlag = false;
-            //    isNotFirstDigit = true;
-            //    //plusFlag = false;
-            //    //minusFlag = false;
-            //    //multiplyFlag = false;
-            //    //divideFlag = false;
-            //}
-            //else if ((plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == true)
-            //    textBox.Text += "3";
         }
 
-        //repeat steps from 1 for 4
         private void four_Click(object sender, EventArgs e)
         {
             digitClicked(4);
-            //if (memFlag == false && plusFlag == false && minusFlag == false && multiplyFlag == false && divideFlag == false)
-            //{
-            //    if (Convert.ToInt32(textBox.Text) == 0)
-            //        textBox.Text = "4";
-            //    else
-            //        textBox.Text += "4";
-            //}
-            //if (memFlag == true)
-            //{
-            //    textBox.Text = "4";
-            //    memFlag = false;
-            //    //plusFlag = false;
-            //    //minusFlag = false;
-            //    //multiplyFlag = false;
-            //    //divideFlag = false;
-            //}
-            //if (plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
-            //    textBox.Text += "4";
         }
 
-        //repeat steps from 1 for 5
+        //if 5 is clicked
         private void five_Click(object sender, EventArgs e)
         {
             digitClicked(5);
-            //if (memFlag == false && plusFlag == false && minusFlag == false && multiplyFlag == false && divideFlag == false)
-            //{
-            //    if (Convert.ToInt32(textBox.Text) == 0)
-            //        textBox.Text = "5";
-            //    else
-            //        textBox.Text += "5";
-            //}
-            //if ((memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == false)
-            //{
-            //    textBox.Text = "5";
-            //    memFlag = false;
-            //    isNotFirstDigit = true;
-            //    //plusFlag = false;
-            //    //minusFlag = false;
-            //    //multiplyFlag = false;
-            //    //divideFlag = false;
-            //}
-            //else if ((plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == true)
-            //    textBox.Text += "5";
         }
 
-        //repeat steps from 1 for 6
+        //if 6 is clicked
         private void six_Click(object sender, EventArgs e)
         {
             digitClicked(6);
-            //if (memFlag == false && plusFlag == false && minusFlag == false && multiplyFlag == false && divideFlag == false)
-            //{
-            //    if (Convert.ToInt32(textBox.Text) == 0)
-            //        textBox.Text = "6";
-            //    else
-            //        textBox.Text += "6";
-            //}
-            //else if ((memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true
-            //    || divideFlag == true || equalSignPressed == true) && isNotFirstDigit == false)
-            //{
-            //    textBox.Text = "6";
-            //    memFlag = false;
-            //    isNotFirstDigit = true;
-            //    //plusFlag = false;
-            //    //minusFlag = false;
-            //    //multiplyFlag = false;
-            //    //divideFlag = false;
-            //}
-
-
-            //else //((plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == true)
-            //{
-            //    textBox.Text += "6";
-            //}
         }
 
-        //repeat steps from 1 for 7
+        //if 7 is clicked
         private void seven_Click(object sender, EventArgs e)
         {
             digitClicked(7);
-            //if (memFlag == false && plusFlag == false && minusFlag == false && multiplyFlag == false && divideFlag == false)
-            //{
-            //    if (Convert.ToInt32(textBox.Text) == 0)
-            //        textBox.Text = "7";
-            //    else
-            //        textBox.Text += "7";
-            //}
-
-            //if ((memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == false)
-            //{
-            //    textBox.Text = "7";
-            //    memFlag = false;
-            //    isNotFirstDigit = true;
-            //    //plusFlag = false;
-            //    //minusFlag = false;
-            //    //multiplyFlag = false;
-            //    //divideFlag = false;
-            //}
-            //else if ((plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == true)
-            //    textBox.Text += "7";
         }
 
-        //repeat steps from 1 for 8
+        //if 8 is clicked
         private void eight_Click(object sender, EventArgs e)
         {
             digitClicked(8);
-            //if (memFlag == false && plusFlag == false && minusFlag == false && multiplyFlag == false && divideFlag == false)
-            //{
-            //    if (Convert.ToInt32(textBox.Text) == 0)
-            //        textBox.Text = "8";
-            //    else
-            //        textBox.Text += "8";
-            //}
-            //if ((memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == false)
-            //{
-            //    textBox.Text = "8";
-            //    memFlag = false;
-            //    isNotFirstDigit = true;
-            //    //plusFlag = false;
-            //    //minusFlag = false;
-            //    //multiplyFlag = false;
-            //    //divideFlag = false;
-            //}
-            //else if ((plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == true)
-            //    textBox.Text += "8";
         }
 
-        //repeat steps from 1 for 9
+        //if 9 is clicked
         private void nine_Click(object sender, EventArgs e)
         {
             digitClicked(9);
-            //if (memFlag == false && plusFlag == false && minusFlag == false && multiplyFlag == false && divideFlag == false)
-            //{
-            //    if (Convert.ToInt32(textBox.Text) == 0)
-            //        textBox.Text = "9";
-            //    else
-            //    textBox.Text += "9";
-            //}
-            //if ((memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == false)
-            //{
-            //    textBox.Text = "9";
-            //    memFlag = false;
-            //    isNotFirstDigit = true;
-            //    //plusFlag = false;
-            //    //minusFlag = false;
-            //    //multiplyFlag = false;
-            //    //divideFlag = false;
-            //}
-            //else if ((plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == true)
-            //    textBox.Text += "9";
         }
 
+        //if 0 is clicked
         private void zero_Click(object sender, EventArgs e)
         {
             if (memFlag == false && plusFlag == false && minusFlag == false && multiplyFlag == false && divideFlag == false)//checks if memory or any other operator button has been clicked
@@ -361,26 +141,23 @@ namespace CaoSeanCalculator
                 if (Convert.ToInt32(textBox.Text) != 0)//checks if the number in the textbox is 0
                     textBox.Text += "0";//add 0 if it is not(we don't want 00 or 000 showing up
                 else
-                
-                    textBox.Text = "0";
+                    textBox.Text = "0";//makes the text 0(keeps it at 0)
             }
             if (memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
             {
                 textBox.Text = "0";
                 memFlag = false;
-                //plusFlag = false;
-                //minusFlag = false;
-                //multiplyFlag = false;
-                //divideFlag = false;
             }
         }
 
+        //if the plus button is clicked
         private void plus_Click(object sender, EventArgs e)
         {
             plusFlag = true;
             temp1stnumber = Convert.ToInt32(textBox.Text);
         }
 
+        //if the minus button is clicked
         private void minus_Click(object sender, EventArgs e)
         {
             minusFlag = true;
@@ -423,7 +200,6 @@ namespace CaoSeanCalculator
         {
             memFlag = true;
             textBox.Text = Convert.ToString(memory);
-            //Console.Write(textBox.Text);
         }
 
         private void memClear_Click(object sender, EventArgs e)
@@ -440,13 +216,13 @@ namespace CaoSeanCalculator
         {
             textBox.Text = "0";
             temp1stnumber = 0;
+            memFlag = false;
             plusFlag = false;
+            minusFlag = false;
+            multiplyFlag = false;
+            divideFlag = false;
             isNotFirstDigit = false;
-        }
-
-        private void memIndicator_TextChanged(object sender, EventArgs e)
-        {
-
+            errorIndicator.Text = "";
         }
 
     }
