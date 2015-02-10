@@ -1,9 +1,11 @@
 ﻿/* This application is a calculator that calculates simple math
  * There is a memory feature available as a well as a Memory indicator(top left of display)
  * There are no decimals...
- * Using the numericUpDown, you can change background color for the display
+ * Using the numericUpDown, you can change background color for the display(16 to choose from)
  * I learned that it's really difficult to make a program without bugs
  * There are many cases of calculation that I have appeared to miss
+ * You cannot do 2 calculations in a row! For example, 2 + 4 + 3 will NOT work
+ * Division does not work unless numbers are whole
  */
 
 using System;
@@ -29,6 +31,7 @@ namespace CaoSeanCalculator
         private bool multiplyFlag = false;
         private bool divideFlag = false;
         private bool isNotFirstDigit = false;
+        private bool equalSignPressed = false;
      
         public Calculator()
         {
@@ -36,7 +39,8 @@ namespace CaoSeanCalculator
             textBox.Text = "0"; //start the calculator with a 0
             textBox.BackColor = Color.White;
         }
-
+        
+        //if the equalsign is clicked
         private void equalsign_Click(object sender, EventArgs e)
         {
             if(plusFlag == true)
@@ -62,17 +66,19 @@ namespace CaoSeanCalculator
                 multiplyFlag = false;
                 divideFlag = false;
                 isNotFirstDigit = false;
+                equalSignPressed = true;
             
         }
 
+        //a method for all digits except 0
         private void digitClicked(int value)
         {
-            if (memFlag == false && plusFlag == false && minusFlag == false && multiplyFlag == false && divideFlag == false)
+            if (memFlag == false && plusFlag == false && minusFlag == false && multiplyFlag == false && divideFlag == false)//checks if any operation has been clicked, and if not, continues
             {
-                if (Convert.ToInt32(textBox.Text) == 0)
-                    textBox.Text = Convert.ToString(value);
+                if (Convert.ToInt32(textBox.Text) == 0 || equalSignPressed == true)//checks if the text is 0 or if equal sign has been pressed before
+                    textBox.Text = Convert.ToString(value);//sets the number to the number pressed
                 else
-                    textBox.Text += value;
+                    textBox.Text += value;//add 
             }
             if ((memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == false)
             {
@@ -80,25 +86,34 @@ namespace CaoSeanCalculator
                 memFlag = false;
                 isNotFirstDigit = true;
             }
-            else if ((plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == true)
+            else if ((memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true) && isNotFirstDigit == true)
+            {
                 textBox.Text += Convert.ToString(value);
+                memFlag = false;
+            }
+
+            
+            equalSignPressed = false;
         }
 
+        //if 1 is clicked
         private void one_Click(object sender, EventArgs e)
         {
             digitClicked(1);
         }
 
+        //if 2 is clicked
         private void two_Click(object sender, EventArgs e)
         {
             digitClicked(2);
         }
 
+        //if 3 is clicked
         private void three_Click(object sender, EventArgs e)
         {
             digitClicked(3);
         }
-
+        //if 4 is clicked
         private void four_Click(object sender, EventArgs e)
         {
             digitClicked(4);
@@ -137,18 +152,7 @@ namespace CaoSeanCalculator
         //if 0 is clicked
         private void zero_Click(object sender, EventArgs e)
         {
-            if (memFlag == false && plusFlag == false && minusFlag == false && multiplyFlag == false && divideFlag == false)//checks if memory or any other operator button has been clicked
-            {
-                if (Convert.ToInt32(textBox.Text) != 0)//checks if the number in the textbox is 0
-                    textBox.Text += "0";//add 0 if it is not(we don't want 00 or 000 showing up
-                else
-                    textBox.Text = "0";//makes the text 0(keeps it at 0)
-            }
-            if (memFlag == true || plusFlag == true || minusFlag == true || multiplyFlag == true || divideFlag == true)
-            {
-                textBox.Text = "0";
-                memFlag = false;
-            }
+            digitClicked(0);
         }
 
         //if the plus button is clicked
@@ -203,6 +207,7 @@ namespace CaoSeanCalculator
             textBox.Text = Convert.ToString(memory);
         }
 
+        //if memory clear is clicked(resets memory)
         private void memClear_Click(object sender, EventArgs e)
         {
             memory = 0;
@@ -213,6 +218,7 @@ namespace CaoSeanCalculator
                 memIndicator.Text = "";
         }
 
+        //if Clear is clicked(resets everything)
         private void clear_Click(object sender, EventArgs e)
         {
             textBox.Text = "0";
@@ -226,6 +232,7 @@ namespace CaoSeanCalculator
             errorIndicator.Text = "";
         }
 
+        //if the numericUpDown color changer value is changed
         private void ColorChanger_ValueChanged(object sender, EventArgs e)
         {
             if (ColorChanger.Value == 0)
